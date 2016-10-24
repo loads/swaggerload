@@ -1,7 +1,16 @@
 swagger: "2.0"
+host: accounts.stage.mozaws.net
 info:
-  title: Simple API overview
+  title: FxA Content Server
+  description: The content Server of FxA
+  contact:
+      name: Ryan Kelly
+      email: ryan@someemail.com
+  license:
+      name: MPL v2.0
+      url: https://www.mozilla.org/en-US/MPL/2.0/
   version: 0.36.3
+  x-homepage: https://github.com/mozilla/fxa-content-server
   x-commit: 25dedeb0b1f2d5212f34e41ed17317bc5fbf5477
   x-l10n: 412fdf2ec9
   x-tosPp: 15e58d3fe8
