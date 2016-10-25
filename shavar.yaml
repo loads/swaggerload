@@ -12,10 +12,12 @@ info:
   version: 0.7.0
   x-mozilla-services:
     homepage: https://github.com/mozilla-services/shavar
-
+schemes:
+    - https
 paths:
     /__version__:
       get:
+        operationId: getVersion
         description: Returns the version
         produces:
         - application/json
@@ -24,6 +26,7 @@ paths:
             description: The version is returned
     /downloads:
       post:
+        operationId: getDownloads
         description: returns a list of Safe Browsing URLs
         produces:
         - application/json
@@ -45,7 +48,7 @@ paths:
             required: false
             type: integer
         responses:
-            '200': 
+            '200':
               description: List returned
             '400':
               description: Invalid Input
