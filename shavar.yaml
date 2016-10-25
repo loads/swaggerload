@@ -1,0 +1,51 @@
+swagger: "2.0"
+host: shavar.stage.mozaws.net
+info:
+  title: FxA Content Server
+  description: The content Server of FxA
+  contact:
+    name: John Doe
+    email: john@someemail.com
+  license:
+    name: MPL v2.0
+    url: https://www.mozilla.org/en-US/MPL/2.0/
+  version: 0.7.0
+  x-mozilla-services:
+    homepage: https://github.com/mozilla-services/shavar
+
+paths:
+    /__version__:
+      get:
+        description: Returns the version
+        produces:
+        - application/json
+        responses:
+          '200':
+            description: The version is returned
+    /downloads:
+      post:
+        description: returns a list of Safe Browsing URLs
+        produces:
+        - application/json
+        parameters:
+          - name: query
+            in: body
+            description: Shavar query string
+            required: false
+            schema:
+              type: string
+          - name: default_interval
+            in: query
+            description: define the default refresh interval
+            required: false
+            type: integer
+          - name: client_backoff_delay
+            in: query
+            description: define the backoff delay
+            required: false
+            type: integer
+        responses:
+            '200': 
+              description: List returned
+            '400':
+              description: Invalid Input
