@@ -21,4 +21,8 @@ for path, spec in parser.specification['paths'].items():
         endpoint = urlunparse((scheme, host, path, '', '', ''))
         verb = verb.upper()
         print('Checking %s %s...' % (verb, endpoint))
-        func(verb, endpoint, **options)
+        try:
+            func(verb, endpoint, **options)
+            print('OK')
+        except Exception:
+            print('FAIL')

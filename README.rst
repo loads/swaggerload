@@ -1,14 +1,15 @@
-BasicLoad
-=========
+SwaggerLoad
+===========
 
-**BasicLoad** leverages Boom! to run load tests on a server.
+**SwaggerLoad** is a smoke test & load test tool.
 
-It's using an Open API (Swagger) description of the server endpoints
-and sends its activity via statsd.
+It's using an Open API (Swagger) description for a service to
+automatically check every endpoint described.
 
-BasicLoad comes with a Docker image that can be used with Loads
-to automatically run a distributed load tests on a running server
-by grabbing a published JSON file on that server.
+If needed, you can write your own tests and assertions, by
+linking a function to a Swagger operation id.
+
+SwaggerLoad can be used as a load tester using Loads.
 
 
 
